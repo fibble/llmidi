@@ -17,7 +17,9 @@
             </div>
             <div v-else class="track-content">
               <h2>{{ appStore.activeTrack?.name }}</h2>
-              <p class="track-info">Ready to generate MIDI content</p>
+              <p class="track-info">
+                Ready to generate MIDI content
+              </p>
             </div>
           </section>
         </div>

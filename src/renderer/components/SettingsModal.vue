@@ -2,10 +2,12 @@
   <div v-if="isOpen" class="modal-overlay" @click="handleOverlayClick">
     <div class="modal-container settings-modal" @click.stop>
       <div class="modal-header">
-        <h2 class="modal-title">Settings</h2>
+        <h2 class="modal-title">
+          Settings
+        </h2>
         <button class="btn btn-ghost btn-icon" @click="$emit('close')">
           <svg class="icon" viewBox="0 0 24 24">
-            <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"/>
+            <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" />
           </svg>
         </button>
       </div>
@@ -43,11 +45,11 @@
                     class="input"
                     placeholder="sk-or-..."
                     @input="markDirty"
-                  />
+                  >
                   <button 
                     class="btn btn-ghost btn-sm"
-                    @click="showApiKey = !showApiKey"
                     type="button"
+                    @click="showApiKey = !showApiKey"
                   >
                     {{ showApiKey ? 'Hide' : 'Show' }}
                   </button>
@@ -62,20 +64,38 @@
                   class="input"
                   @change="handleModelChange"
                 >
-                  <option value="custom">Custom Model</option>
+                  <option value="custom">
+                    Custom Model
+                  </option>
                   <optgroup label="OpenAI">
-                    <option value="openai/gpt-4">GPT-4</option>
-                    <option value="openai/gpt-4-turbo">GPT-4 Turbo</option>
-                    <option value="openai/gpt-3.5-turbo">GPT-3.5 Turbo</option>
+                    <option value="openai/gpt-4">
+                      GPT-4
+                    </option>
+                    <option value="openai/gpt-4-turbo">
+                      GPT-4 Turbo
+                    </option>
+                    <option value="openai/gpt-3.5-turbo">
+                      GPT-3.5 Turbo
+                    </option>
                   </optgroup>
                   <optgroup label="Anthropic">
-                    <option value="anthropic/claude-3-opus">Claude 3 Opus</option>
-                    <option value="anthropic/claude-3-sonnet">Claude 3 Sonnet</option>
-                    <option value="anthropic/claude-3-haiku">Claude 3 Haiku</option>
+                    <option value="anthropic/claude-3-opus">
+                      Claude 3 Opus
+                    </option>
+                    <option value="anthropic/claude-3-sonnet">
+                      Claude 3 Sonnet
+                    </option>
+                    <option value="anthropic/claude-3-haiku">
+                      Claude 3 Haiku
+                    </option>
                   </optgroup>
                   <optgroup label="Google">
-                    <option value="google/gemini-pro">Gemini Pro</option>
-                    <option value="google/gemini-pro-1.5">Gemini Pro 1.5</option>
+                    <option value="google/gemini-pro">
+                      Gemini Pro
+                    </option>
+                    <option value="google/gemini-pro-1.5">
+                      Gemini Pro 1.5
+                    </option>
                   </optgroup>
                 </select>
               </div>
@@ -89,7 +109,7 @@
                   class="input"
                   placeholder="e.g., meta-llama/llama-2-70b-chat"
                   @input="markDirty"
-                />
+                >
                 <p class="help-text">
                   Enter the exact model identifier from OpenRouter
                 </p>
@@ -97,8 +117,8 @@
               
               <button 
                 class="btn btn-secondary"
-                @click="testConnection"
                 :disabled="!localSettings.openRouterApiKey || isTestingConnection"
+                @click="testConnection"
               >
                 {{ isTestingConnection ? 'Testing...' : 'Test Connection' }}
               </button>
@@ -122,7 +142,9 @@
                   class="input"
                   @change="markDirty"
                 >
-                  <option value="default">System Default</option>
+                  <option value="default">
+                    System Default
+                  </option>
                   <!-- Additional devices would be populated dynamically -->
                 </select>
               </div>
@@ -139,8 +161,12 @@
                   class="input"
                   @change="markDirty"
                 >
-                  <option value="none">None</option>
-                  <option value="virtual">Virtual MIDI</option>
+                  <option value="none">
+                    None
+                  </option>
+                  <option value="virtual">
+                    Virtual MIDI
+                  </option>
                   <!-- Additional devices would be populated dynamically -->
                 </select>
               </div>
@@ -157,10 +183,18 @@
                   class="input"
                   @change="markDirty"
                 >
-                  <option value="piano">Piano</option>
-                  <option value="electric-piano">Electric Piano</option>
-                  <option value="synth">Synthesizer</option>
-                  <option value="strings">Strings</option>
+                  <option value="piano">
+                    Piano
+                  </option>
+                  <option value="electric-piano">
+                    Electric Piano
+                  </option>
+                  <option value="synth">
+                    Synthesizer
+                  </option>
+                  <option value="strings">
+                    Strings
+                  </option>
                 </select>
               </div>
               
@@ -172,9 +206,15 @@
                   class="input"
                   @change="markDirty"
                 >
-                  <option value="bass">Electric Bass</option>
-                  <option value="synth-bass">Synth Bass</option>
-                  <option value="upright-bass">Upright Bass</option>
+                  <option value="bass">
+                    Electric Bass
+                  </option>
+                  <option value="synth-bass">
+                    Synth Bass
+                  </option>
+                  <option value="upright-bass">
+                    Upright Bass
+                  </option>
                 </select>
               </div>
               
@@ -186,10 +226,18 @@
                   class="input"
                   @change="markDirty"
                 >
-                  <option value="electric-piano">Electric Piano</option>
-                  <option value="piano">Piano</option>
-                  <option value="guitar">Guitar</option>
-                  <option value="organ">Organ</option>
+                  <option value="electric-piano">
+                    Electric Piano
+                  </option>
+                  <option value="piano">
+                    Piano
+                  </option>
+                  <option value="guitar">
+                    Guitar
+                  </option>
+                  <option value="organ">
+                    Organ
+                  </option>
                 </select>
               </div>
               
@@ -201,8 +249,12 @@
                   class="input"
                   @change="markDirty"
                 >
-                  <option value="drums">Acoustic Drums</option>
-                  <option value="electronic-drums">Electronic Drums</option>
+                  <option value="drums">
+                    Acoustic Drums
+                  </option>
+                  <option value="electronic-drums">
+                    Electronic Drums
+                  </option>
                 </select>
               </div>
             </div>
@@ -223,7 +275,7 @@
                   max="64"
                   class="input"
                   @input="markDirty"
-                />
+                >
               </div>
               
               <div class="form-group">
@@ -234,40 +286,88 @@
                   class="input"
                   @change="markDirty"
                 >
-                  <option value="C">C Major</option>
-                  <option value="G">G Major</option>
-                  <option value="D">D Major</option>
-                  <option value="A">A Major</option>
-                  <option value="E">E Major</option>
-                  <option value="B">B Major</option>
-                  <option value="F">F Major</option>
-                  <option value="Bb">B♭ Major</option>
-                  <option value="Eb">E♭ Major</option>
-                  <option value="Ab">A♭ Major</option>
-                  <option value="Db">D♭ Major</option>
-                  <option value="Gb">G♭ Major</option>
-                  <option value="Am">A Minor</option>
-                  <option value="Em">E Minor</option>
-                  <option value="Bm">B Minor</option>
-                  <option value="F#m">F# Minor</option>
-                  <option value="C#m">C# Minor</option>
-                  <option value="G#m">G# Minor</option>
-                  <option value="Dm">D Minor</option>
-                  <option value="Gm">G Minor</option>
-                  <option value="Cm">C Minor</option>
-                  <option value="Fm">F Minor</option>
-                  <option value="Bbm">B♭ Minor</option>
-                  <option value="Ebm">E♭ Minor</option>
+                  <option value="C">
+                    C Major
+                  </option>
+                  <option value="G">
+                    G Major
+                  </option>
+                  <option value="D">
+                    D Major
+                  </option>
+                  <option value="A">
+                    A Major
+                  </option>
+                  <option value="E">
+                    E Major
+                  </option>
+                  <option value="B">
+                    B Major
+                  </option>
+                  <option value="F">
+                    F Major
+                  </option>
+                  <option value="Bb">
+                    B♭ Major
+                  </option>
+                  <option value="Eb">
+                    E♭ Major
+                  </option>
+                  <option value="Ab">
+                    A♭ Major
+                  </option>
+                  <option value="Db">
+                    D♭ Major
+                  </option>
+                  <option value="Gb">
+                    G♭ Major
+                  </option>
+                  <option value="Am">
+                    A Minor
+                  </option>
+                  <option value="Em">
+                    E Minor
+                  </option>
+                  <option value="Bm">
+                    B Minor
+                  </option>
+                  <option value="F#m">
+                    F# Minor
+                  </option>
+                  <option value="C#m">
+                    C# Minor
+                  </option>
+                  <option value="G#m">
+                    G# Minor
+                  </option>
+                  <option value="Dm">
+                    D Minor
+                  </option>
+                  <option value="Gm">
+                    G Minor
+                  </option>
+                  <option value="Cm">
+                    C Minor
+                  </option>
+                  <option value="Fm">
+                    F Minor
+                  </option>
+                  <option value="Bbm">
+                    B♭ Minor
+                  </option>
+                  <option value="Ebm">
+                    E♭ Minor
+                  </option>
                 </select>
               </div>
               
               <div class="form-group checkbox-group">
                 <label>
                   <input
-                    type="checkbox"
                     v-model="localSettings.generation.includeChordSymbols"
+                    type="checkbox"
                     @change="markDirty"
-                  />
+                  >
                   Include chord symbols
                 </label>
               </div>
@@ -275,10 +375,10 @@
               <div class="form-group checkbox-group">
                 <label>
                   <input
-                    type="checkbox"
                     v-model="localSettings.generation.humanizeVelocity"
+                    type="checkbox"
                     @change="markDirty"
-                  />
+                  >
                   Humanize velocity
                 </label>
               </div>
@@ -286,10 +386,10 @@
               <div class="form-group checkbox-group">
                 <label>
                   <input
-                    type="checkbox"
                     v-model="localSettings.generation.humanizeTiming"
+                    type="checkbox"
                     @change="markDirty"
-                  />
+                  >
                   Humanize timing
                 </label>
               </div>
@@ -309,9 +409,15 @@
                   class="input"
                   @change="markDirty"
                 >
-                  <option value="dark">Dark</option>
-                  <option value="light">Light</option>
-                  <option value="auto">Auto (System)</option>
+                  <option value="dark">
+                    Dark
+                  </option>
+                  <option value="light">
+                    Light
+                  </option>
+                  <option value="auto">
+                    Auto (System)
+                  </option>
                 </select>
               </div>
             </div>
@@ -330,17 +436,17 @@
                   step="0.1"
                   class="input-range"
                   @input="markDirty"
-                />
+                >
                 <span class="range-value">{{ localSettings.ui.pianoRollZoom }}x</span>
               </div>
               
               <div class="form-group checkbox-group">
                 <label>
                   <input
-                    type="checkbox"
                     v-model="localSettings.ui.showVelocity"
+                    type="checkbox"
                     @change="markDirty"
-                  />
+                  >
                   Show velocity
                 </label>
               </div>
@@ -348,10 +454,10 @@
               <div class="form-group checkbox-group">
                 <label>
                   <input
-                    type="checkbox"
                     v-model="localSettings.ui.snapToGrid"
+                    type="checkbox"
                     @change="markDirty"
-                  />
+                  >
                   Snap to grid
                 </label>
               </div>
@@ -364,10 +470,18 @@
                   class="input"
                   @change="markDirty"
                 >
-                  <option :value="4">1/4 (Quarter notes)</option>
-                  <option :value="8">1/8 (Eighth notes)</option>
-                  <option :value="16">1/16 (Sixteenth notes)</option>
-                  <option :value="32">1/32 (Thirty-second notes)</option>
+                  <option :value="4">
+                    1/4 (Quarter notes)
+                  </option>
+                  <option :value="8">
+                    1/8 (Eighth notes)
+                  </option>
+                  <option :value="16">
+                    1/16 (Sixteenth notes)
+                  </option>
+                  <option :value="32">
+                    1/32 (Thirty-second notes)
+                  </option>
                 </select>
               </div>
             </div>
@@ -383,7 +497,7 @@
           <button class="btn btn-ghost" @click="handleCancel">
             Cancel
           </button>
-          <button class="btn btn-primary" @click="handleSave" :disabled="!isDirty">
+          <button class="btn btn-primary" :disabled="!isDirty" @click="handleSave">
             Save Changes
           </button>
         </div>
@@ -393,7 +507,7 @@
 </template>
 
 <script setup>
-import { ref, computed, watch, onMounted } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import { useSettingsStore } from '../stores/settingsStore'
 
 const props = defineProps({

@@ -2,6 +2,8 @@
 
 > AI-powered MIDI composition through natural language conversations
 
+![CI](https://github.com/fibble/llmidi/actions/workflows/ci.yml/badge.svg)
+
 ⚠️ **WORK IN PROGRESS** - This is an early-stage project and highly experimental! ⚠️
 
 **llmidi** is a planned open-source Electron application that will transform musical ideas into MIDI sequences using conversational AI. The vision: describe what you want to hear in plain English, and watch as AI generates the perfect musical parts for your compositions.

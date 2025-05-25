@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref, watch } from 'vue'
+import { ref } from 'vue'
 
 export const useSettingsStore = defineStore('settings', () => {
   // Default settings
@@ -40,7 +40,7 @@ export const useSettingsStore = defineStore('settings', () => {
       isLoading.value = true
       
       // Load each setting from electron store
-      for (const [key, defaultValue] of Object.entries(defaultSettings)) {
+      for (const key of Object.keys(defaultSettings)) {
         const value = await window.electronAPI.getSettings(key)
         if (value !== undefined) {
           settings.value[key] = value

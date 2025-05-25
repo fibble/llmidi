@@ -1,14 +1,12 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { mount, flushPromises } from '@vue/test-utils'
-import { createPinia, setActivePinia } from 'pinia'
+import { createTestingPinia } from '@pinia/testing'
 import HeaderBar from '@/components/HeaderBar.vue'
-import TransportControls from '@/components/TransportControls.vue'
 
 describe('HeaderBar', () => {
   let wrapper
   
   beforeEach(async () => {
-    setActivePinia(createPinia())
     // Reset mocks
     vi.clearAllMocks()
     // Reset getPlatform to darwin (macOS) for each test
@@ -18,6 +16,7 @@ describe('HeaderBar', () => {
     
     wrapper = mount(HeaderBar, {
       global: {
+        plugins: [createTestingPinia()],
         stubs: {
           TransportControls: true
         }
@@ -46,6 +45,7 @@ describe('HeaderBar', () => {
     
     const winWrapper = mount(HeaderBar, {
       global: {
+        plugins: [createTestingPinia()],
         stubs: {
           TransportControls: true
         }
@@ -62,6 +62,7 @@ describe('HeaderBar', () => {
     
     const winWrapper = mount(HeaderBar, {
       global: {
+        plugins: [createTestingPinia()],
         stubs: {
           TransportControls: true
         }

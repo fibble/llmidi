@@ -6,21 +6,23 @@
           src="/images/new-transparent-cropped.png" 
           alt="LLMIDI Logo" 
           class="logo"
-        />
+        >
       </div>
       
-      <h1 class="welcome-title">Welcome to LLMIDI</h1>
+      <h1 class="welcome-title">
+        Welcome to LLMIDI
+      </h1>
       <p class="welcome-subtitle">
         Create music through conversation with AI<br>
       </p>
-      <p></p>
+      <p />
       <div v-if="!hasApiKey" class="setup-section">
         <p class="setup-message">
           To get started please configure an OpenRouter API Key.
         </p>
         <button class="btn btn-primary btn-lg" @click="$emit('open-settings')">
           <svg class="icon" viewBox="0 0 24 24">
-            <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66Z"/>
+            <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66Z" />
           </svg>
           Configure LLMIDI
         </button>
@@ -29,14 +31,14 @@
       <div v-else class="action-buttons">
         <button class="btn btn-primary btn-lg" @click="showNewCompositionModal = true">
           <svg class="icon" viewBox="0 0 24 24">
-            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
           </svg>
           New Composition
         </button>
         
         <button class="btn btn-secondary btn-lg" @click="handleLoadComposition">
           <svg class="icon" viewBox="0 0 24 24">
-            <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/>
+            <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z" />
           </svg>
           Load Composition
         </button>
@@ -45,7 +47,7 @@
       <div class="features">
         <div class="feature">
           <svg class="feature-icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/>
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z" />
           </svg>
           <h3>Natural Language</h3>
           <p>Describe the music you want to create in plain English</p>
@@ -53,7 +55,7 @@
         
         <div class="feature">
           <svg class="feature-icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z"/>
+            <path d="M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z" />
           </svg>
           <h3>Multi-Track</h3>
           <p>Layer multiple instruments to build complete arrangements</p>
@@ -61,7 +63,7 @@
         
         <div class="feature">
           <svg class="feature-icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
           </svg>
           <h3>Piano Roll</h3>
           <p>See and edit your compositions with an intuitive interface</p>
@@ -69,7 +71,7 @@
         
         <div class="feature">
           <svg class="feature-icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M9 3v2H7V3h2m2 0h2v2h-2V3m4 0h2v2h-2V3M3 7h2v2H3V7m4 0h2v2H7V7m4 0h2v2h-2V7m4 0h2v2h-2V7m4 0h2v2h-2V7M3 11h2v2H3v-2m4 0h2v2H7v-2m4 0h2v2h-2v-2m4 0h2v2h-2v-2m4 0h2v2h-2v-2M3 15h2v2H3v-2m4 0h2v2H7v-2m4 0h2v2h-2v-2m4 0h2v2h-2v-2m4 0h2v2h-2v-2M3 19h2v2H3v-2m4 0h2v2H7v-2m4 0h2v2h-2v-2m4 0h2v2h-2v-2"/>
+            <path d="M9 3v2H7V3h2m2 0h2v2h-2V3m4 0h2v2h-2V3M3 7h2v2H3V7m4 0h2v2H7V7m4 0h2v2h-2V7m4 0h2v2h-2V7m4 0h2v2h-2V7M3 11h2v2H3v-2m4 0h2v2H7v-2m4 0h2v2h-2v-2m4 0h2v2h-2v-2m4 0h2v2h-2v-2M3 15h2v2H3v-2m4 0h2v2H7v-2m4 0h2v2h-2v-2m4 0h2v2h-2v-2m4 0h2v2h-2v-2M3 19h2v2H3v-2m4 0h2v2H7v-2m4 0h2v2h-2v-2m4 0h2v2h-2v-2" />
           </svg>
           <h3>DAW Integration</h3>
           <p>Export MIDI or connect directly to your favorite DAW</p>

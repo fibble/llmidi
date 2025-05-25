@@ -2,24 +2,24 @@
   <div class="transport-controls">
     <button 
       class="btn btn-ghost btn-icon"
-      @click="appStore.stopPlayback()"
       title="Stop"
+      @click="appStore.stopPlayback()"
     >
       <svg class="icon" viewBox="0 0 24 24">
-        <path d="M6 6h12v12H6z"/>
+        <path d="M6 6h12v12H6z" />
       </svg>
     </button>
     
     <button 
       class="btn btn-primary btn-icon"
-      @click="appStore.togglePlayback()"
       :title="appStore.isPlaying ? 'Pause' : 'Play'"
+      @click="appStore.togglePlayback()"
     >
       <svg v-if="!appStore.isPlaying" class="icon" viewBox="0 0 24 24">
-        <path d="M8 5v14l11-7z"/>
+        <path d="M8 5v14l11-7z" />
       </svg>
       <svg v-else class="icon" viewBox="0 0 24 24">
-        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
       </svg>
     </button>
     
@@ -29,11 +29,11 @@
         type="range"
         class="tempo-slider"
         :value="appStore.tempo"
-        @input="appStore.setTempo($event.target.value)"
         min="40"
         max="300"
         step="1"
-      />
+        @input="appStore.setTempo($event.target.value)"
+      >
     </div>
     
     <div class="time-signature">
