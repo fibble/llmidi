@@ -46,7 +46,7 @@ jobs:
       run: npm run build
     
     - name: Upload test results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: failure()
       with:
         name: test-results-${{ matrix.os }}-${{ matrix.node-version }}
@@ -82,7 +82,7 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
     - name: Upload artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: dist-${{ matrix.os }}
         path: release/
