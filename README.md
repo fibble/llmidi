@@ -52,14 +52,51 @@ This project is in **very early development**. Currently exploring concepts and 
 - **Cross-Platform**: Works on Windows, macOS, and Linux
 - **Open Source**: Fully transparent and community-driven development
 
-## 🚀 Getting Started (When Ready)
+## 🚀 Getting Started
 
-*This section will be updated as development progresses*
+### Development Setup
 
-1. **Download** releases will be available for Windows, macOS, and Linux
-2. **Set up** OpenRouter API key for AI music generation  
-3. **Generate** musical ideas through natural language
-4. **Export** or route to your DAW for production
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/fibble/llmidi.git
+   cd llmidi
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run in development mode**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production**
+   ```bash
+   # For your current platform
+   npm run build
+   npm run dist
+
+   # For all platforms
+   npm run build
+   npm run pack
+   ```
+
+### First Run
+
+1. Launch the app in development mode
+2. Click the Settings button in the header
+3. Add your OpenRouter API key
+4. Create your first track and start generating music!
+
+### Available Scripts
+
+- `npm run dev` - Start the app in development mode with hot reload
+- `npm run build` - Build the app for production
+- `npm run lint` - Run ESLint to check code quality
+- `npm run format` - Format code with Prettier
+- `npm run clean` - Clean build directories
 
 ## 🎯 Planned Use Cases
 
@@ -80,7 +117,7 @@ This project is in **very early development**. Currently exploring concepts and 
 
 ## 🛠️ Planned Technology Stack
 
-- **Frontend**: Electron with React
+- **Frontend**: Electron with Vue
 - **AI Integration**: OpenRouter API for LLM access
 - **MIDI Processing**: Node.js MIDI libraries
 - **Audio Engine**: Tone.js for built-in instrument playback
