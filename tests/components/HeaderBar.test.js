@@ -1,12 +1,15 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { mount, flushPromises } from '@vue/test-utils'
-import { createTestingPinia } from '@pinia/testing'
+import { setActivePinia, createPinia } from 'pinia'
 import HeaderBar from '@/components/HeaderBar.vue'
 
 describe('HeaderBar', () => {
   let wrapper
   
   beforeEach(async () => {
+    // Set up Pinia
+    setActivePinia(createPinia())
+    
     // Reset mocks
     vi.clearAllMocks()
     // Reset getPlatform to darwin (macOS) for each test
@@ -16,7 +19,6 @@ describe('HeaderBar', () => {
     
     wrapper = mount(HeaderBar, {
       global: {
-        plugins: [createTestingPinia()],
         stubs: {
           TransportControls: true
         }
@@ -45,7 +47,6 @@ describe('HeaderBar', () => {
     
     const winWrapper = mount(HeaderBar, {
       global: {
-        plugins: [createTestingPinia()],
         stubs: {
           TransportControls: true
         }
@@ -62,7 +63,6 @@ describe('HeaderBar', () => {
     
     const winWrapper = mount(HeaderBar, {
       global: {
-        plugins: [createTestingPinia()],
         stubs: {
           TransportControls: true
         }
@@ -87,11 +87,12 @@ describe('HeaderBar', () => {
     expect(window.electronAPI.closeWindow).toHaveBeenCalled()
   })
 
-  it('calls openSettings when settings button clicked', async () => {
+  it('emits open-settings event when settings button clicked', async () => {
     const settingsBtn = wrapper.find('.header-right button')
     await settingsBtn.trigger('click')
     
-    expect(console.log).toHaveBeenCalledWith('Open settings')
+    expect(wrapper.emitted('open-settings')).toBeTruthy()
+    expect(wrapper.emitted('open-settings')).toHaveLength(1)
   })
 
   it('includes TransportControls component', () => {
